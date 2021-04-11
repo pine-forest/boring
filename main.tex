@@ -1,0 +1,62 @@
+\documentclass[12pt]{book}
+
+\usepackage{graphicx}
+% \begin{figure}[h]
+%     \centering % 居中
+%     \includegraphics[scale=0.5]{./first.png}
+%     \caption{CAPTION}
+%     \label{375} % 在引用处使用\ref{375}
+% \end{figure}
+
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=2cm,top=3cm,bottom=3cm}
+
+\usepackage{amsmath}
+\everymath{\displaystyle}
+
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+% \newtheorem{example}{例}[section]
+% \newtheorem{algorithm}{算法}[section]
+\newtheorem{theorem}{\textbf{Theorem}}[section]
+% \newtheorem{definition}{定义}[section]
+% \newtheorem{proposition}{\textbf{Proposition}}[section]
+% \newtheorem{lemma}{引理}[section]
+% \newtheorem{corollary}{推论}[section]
+% and so on...
+\newtheorem{proposition}[theorem]{Proposition}%共享编号
+
+
+\usepackage{hyperref}
+\hypersetup{hypertex=true,colorlinks=true,
+    linkcolor=red,anchorcolor=blue,citecolor=green
+}
+% \href{}{}
+
+% \setcounter{section}{1}
+\renewcommand{\thesection}{\arabic{section}}
+
+\begin{document}
+
+\title{The Proof of Complex Analysis}
+\author{Wen Songlin\\
+        \tt\small pinedog@sina.com}
+\date{}
+\maketitle
+
+\pagenumbering{Roman}
+
+%\include{./content/foreword} % 引入前言
+
+\tableofcontents
+\newpage
+
+\mainmatter
+\pagenumbering{arabic}
+
+\include{./contents/chapter1}
+\include{./contents/chapter2}
+% \include{./contents/chapter3} % 引入第三章
+
+\end{document}
