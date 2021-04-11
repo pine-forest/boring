@@ -2,6 +2,8 @@
 
 :book: textbook: COMPLEX ANALYSIS by Elias M. Stein & Rami Shakarchi
 
+proof of theorems and propositions, solution of some exercises
+
 - learn new mathematics, complex analysis
 - practice my English to write
 - and so on
