@@ -1,6 +1,10 @@
-# The Proof of Complex Analysis
+# No Title
 
 :book: textbook: COMPLEX ANALYSIS by Elias M. Stein & Rami Shakarchi
+
+- learn new mathematics, complex analysis
+- practice my English to write
+- and so on
 
 ## Main Contents
 
