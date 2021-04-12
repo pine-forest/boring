@@ -43,10 +43,31 @@
 \begin{proof}
 \end{proof}
 
+% 复数域的闭区间套定理
 \begin{proposition}
-    if $\Omega_1$
+    if $\Omega_1\supset\Omega_2\supset\cdots\supset\Omega_n\supset\cdots$ is a sequence
+    of non-empty compact sets in $\mathbb{C}$ with the property that
+    \[
+        \text{diam}(\Omega_n)\to 0\quad\text{as}\; n\to\infty,
+    \]
+    then there exists a unique point $w\in\mathbb{C}$ such
+    that $w\in\Omega_n$ for all $n$.
 \end{proposition}
 \begin{proof}
+    Choose a point $z_n$ in each $\Omega_n$. We prove $\{z_n\}$ is a Cauchy sequence.
+    Because of the condition diam$(\Omega_n)\to 0$, so we can get
+    \[
+        \forall \epsilon>0, \exists N\Rightarrow \text{diam}(\Omega_n)<\epsilon.
+    \]
+    We take two integers $m,n>N$, so $z_m,z_n\in\Omega_N$. We can get
+    \[
+        |z_n-z_m|\le \text{diam}(\Omega_n)<\epsilon.
+    \]
+    $\{z_n\}$ is a Cauchy sequence, therefore this sequence converges to a limit that
+    we call $w$. Next, we will prove $w\in \Omega_n$ for all $n$. Finally, $w$ is the
+    unique point satisfying this property, for otherwise, if $w'$ satisfied the same
+    property with $w'\ne w$ we would have $|w-w'|>0$ and the
+    condition diam$(\Omega_n)\to 0$ would be violated.
 \end{proof}
 
 \section{Functions on the complex plane}
@@ -57,3 +78,23 @@
     A continuous function on a compact set $\Omega$ is bounded and attains
     a maximum and minimum on $\Omega$.
 \end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}
+    if $f$ and $g$ are holomorphic in $\Omega$, then:
+    \begin{enumerate}[(i)]
+    \item $f+g$ is holomorphic in $\Omega$ and $(f+g)'=f'+g'$.
+    \item $fg$ is holomorphic in $\Omega$ and $(fg)'=f'g+fg'$.
+    \item If $g(z_0)\ne 0$, then $f/g$ is holomorphic at $z_0$ and
+    \[
+        (f/g)'=\frac{f'g-fg'}{g^2}.
+    \]
+    Moreover, if $f:\Omega\to U$ and $g:U\to\mathbb{C}$ are holomorphic, the chain
+    rule holds
+    \[
+        (g\circ f)'(z)=g'(f(z))f'(z) \text{for all} z\in\Omega.
+    \]
+    \end{enumerate}
+\end{proposition}
