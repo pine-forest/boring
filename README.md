@@ -5,7 +5,7 @@
 proof of theorems and propositions, solution of some exercises
 
 - learn new mathematics, complex analysis
-- practice my English to write
+- practice my English to writing
 - and so on
 
 ## Main Contents

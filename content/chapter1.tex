@@ -91,10 +91,47 @@
     \[
         (f/g)'=\frac{f'g-fg'}{g^2}.
     \]
+    \end{enumerate}
     Moreover, if $f:\Omega\to U$ and $g:U\to\mathbb{C}$ are holomorphic, the chain
     rule holds
     \[
         (g\circ f)'(z)=g'(f(z))f'(z) \text{for all} z\in\Omega.
     \]
-    \end{enumerate}
+    
+    \begin{proof}
+        The three are easy and simple. Next, we will prove the chain rule.
+        Let $F(z) = (g\circ f)(z)$, so
+        \[
+            F'(z)=\lim_{h\to 0}\frac{F(z+h)-F(z)}{h}.
+        \]
+    \end{proof}
 \end{proposition}
+
+\begin{proposition}
+    If $f$ is holomorphic at $z_0$, then
+    \[
+        \frac{\partial f}{\partial \bar{z}}(z_0)=0\pard \text{and}
+    \]
+\end{proposition}
+
+\subsection{Power series}
+
+\begin{theorem}
+    Given a power series $\sum_{n=0}^{\infty}a_n z^n$, there exists
+    $0\le R\le \infty$ such that:
+    \begin{enumerate}[(i)]
+        \item If $|z|<R$ the series converges absolutely.
+        \item If $|z|>R$ the series diverges.
+    \end{enumerate}
+    Moreover, if we use the convention that $1/0=\infty$ and $1/\infty=0$, then
+    $R$ is given by Hadamard's formula
+    \[
+        1/R=\lim \sup |a_n|^{1/n}.
+    \]
+    The number $R$ is called the radius of convergence of the power series,
+    and the region $|z|<R$ the disc of convergence. In particular, we have
+    $R=\infty$ in the case of the exponential function, and $R=1$ for the
+    geometric series.
+\end{theorem}
+\begin{proof}
+\endu{proof}
