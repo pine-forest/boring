@@ -70,6 +70,11 @@
     condition diam$(\Omega_n)\to 0$ would be violated.
 \end{proof}
 
+
+
+
+
+% end section
 \section{Functions on the complex plane}
 
 \subsection{Continuous functions}
@@ -97,22 +102,64 @@
     \[
         (g\circ f)'(z)=g'(f(z))f'(z) \text{for all} z\in\Omega.
     \]
-    
-    \begin{proof}
-        The three are easy and simple. Next, we will prove the chain rule.
-        Let $F(z) = (g\circ f)(z)$, so
-        \[
-            F'(z)=\lim_{h\to 0}\frac{F(z+h)-F(z)}{h}.
-        \]
-    \end{proof}
 \end{proposition}
+\begin{proof}
+    The three are easy and simple. Next, we will prove the chain rule.
+    Let $F(z) = (g\circ f)(z)$, so
+    \[
+        F'(z)=\lim_{h\to 0}\frac{F(z+h)-F(z)}{h}.
+    \]
+\end{proof}
 
 \begin{proposition}
     If $f$ is holomorphic at $z_0$, then
     \[
-        \frac{\partial f}{\partial \bar{z}}(z_0)=0\pard \text{and}
+        \frac{\partial f}{\partial \overline{z}}(z_0)=0\quad \text{and} \quad
+        f'(z_0)=\frac{\partial f}{\partial z}(z_0)=2\frac{\partial u}{\partial z}(z_0)
+    \]
+    Also, if we write $\bm{F}(x,y)=f(z)$, then $\bm{F}$ is differentiable in the sense
+    of real variables, and
+    \[
+        \det{{\bm J}_{\bm F}(x_0,y_0)}=|f'(z_0)|^2.
     \]
 \end{proposition}
+\begin{proof}
+    Taking real and imaginary parts, it is easy to see that the Cauchy-Riemann equations
+    are equivalent to $\partial f/\partial \overline{z}=0$. Moreover, by our earlier observation
+    \[
+        f'(z_0)=\frac{1}{2}(\frac{\partial f}{\partial x}(z_0)+
+        \frac{1}{i}\frac{\partial f}{\partial y}(z_0))=\frac{\partial f}{\partial z}(z_0),
+    \]
+\end{proof}
+
+\begin{theorem}
+    Suppose $f=u+iv$ is a complex-valued function defined on an open set $\Omega$.
+    If $u$ and $v$ are continuously differentiable and satisfy the Cauchy-Riemann equations
+    on $\Omega$, then $f$ is holomorphic on $\Omega$ and $f'(z)=\partial f/\partial z$.
+\end{theorem}
+\begin{proof}
+    Write
+    \[
+        u(x+h_1,y+h2)-u(x,y)=\frac{\partial u}{\partial x}h_1+
+        \frac{\partial u}{\partial y}h_2+|h|\psi_1(h)
+    \]
+    and
+    \[
+        v(x+h_1,y+h2)-v(x,y)=\frac{\partial v}{\partial x}h_1+
+        \frac{\partial v}{\partial y}h_2+|h|\psi_2(h),
+    \]
+    where $\psi_j(h)\to 0$(for $j=1,2$) as $|h|$ tends to $0$, and $h=h_1+ih_2$. Using
+    the Cauchy-Riemann equations we find that
+    \[
+        f(z+h)-f(z)=(\frac{\partial u}{\partial x}-
+        i\frac{\partial u}{\partial y})(h_1+ih_2)+|h|\psi(h),
+    \]
+    where $\psi(h)=\psi_1(h)+i\psi_2(h)\to 0$, as $|h|\to 0$.
+    Therefore $f$ is holomorphic and
+    \[
+        f'(z)=2\frac{\partial u}{\partial z}=\frac{\partial f}{\partial z}.
+    \]
+\end{proof}
 
 \subsection{Power series}
 
@@ -134,4 +181,89 @@
     geometric series.
 \end{theorem}
 \begin{proof}
-\endu{proof}
+\end{proof}
+
+\begin{theorem}
+    The power series $f(z)=\sum_{n=0}^{\infty}a_n z^n$ defines a holomorphic function
+    in its disc of convergence. The derivative of $f$ is also a power series obtained by
+    differentiating term by term the series for $f$, that is,
+    \[
+        f'(z)=\sum_{n=0}^{\infty}na_n z^{n-1}.
+    \]
+    Moreover, $f'$ has the same radius of convergence as $f$.
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{corollary}
+    A power series is infinitely complex differentiable in its disc of convergence, and the higher
+    derivatives are also power series obtained by termwise differentiation.
+\end{corollary}
+\begin{proof}
+\end{proof}
+% end section
+
+
+
+
+
+
+\section{Integration along curves}
+
+\begin{proposition}
+    Integration of continuous function over curves satisfies the following properties:
+    \begin{enumerate}[(i)]
+    % \def\labelenumi{(\textrm{\roman{enumi}})}
+        \item It is linear, that is, if $\alpha,\beta\in\mathbb{C}$, then
+        \[
+            \int_{gamma}(\alpha f(z)+\beta f(z))dz=
+            \alpha\int_{gamma}f(z)dz+\beta\int_{\gamma}g(z)dz.
+        \]
+        \item If $\gamma^-$ is $\gamma$ with the reverse orientation, then
+        \[
+            \int_{\gamma}f(z)dz=-\int_{\gamma^-}f(z)dz.
+        \]
+        \item One has the inequality
+        \[
+            |\int_{\gamma}f(z)dz|\le \sup_{z\in\gamma}|f(z)|\cdot
+            \text{length}(\gamma).
+        \]
+        \end{enumerate}
+\end{proposition}
+\begin{proof}
+\end{proof}
+
+\begin{theorem}
+    If a continuous function $f$ has a primitive $F$ in $\Omega$, and
+    $\gamma$ is a curve in $\Omega$ that begins at $w_1$ and ends at $w_2$,
+    then
+    \[
+        \int_{\gamma}f(z)dz=F(w_2)-F(w_1).
+    \]
+\end{theorem}
+
+\begin{corollary}
+    If $\gamma$ is a closed curve in an open set $\Gamma$, and $f$ is continuous
+    and has a primitive in $\Omega$, then
+    \[
+        \int_{\gamma}f(z)dz=0.
+    \]
+\end{corollary}
+\begin{proof}
+    This is immediate since the end-points of a closed curve coincide.
+\end{proof}
+
+\begin{corollary}
+    If $f$ is holomorphic in a region $\Omega$ and $f'=0$, then $f$ is constant.
+\end{corollary}
+\begin{proof}
+
+\end{proof}
+
+\section{Exercises}
+
+\textbf{1:} It's so easy.\newline
+\textbf{2:} It's so easy.\newline
+\textbf{3:} 
+
+
